@@ -1,8 +1,19 @@
 <!DOCTYPE html>
     <html>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&family=Ysabeau+Office&display=swap" rel="stylesheet">
-        <link href="style.css" type="text/css" rel="stylesheet">
+        <link href="style.css" type="text/css" rel="stylesheet" id="theme">
+        <link rel="alternate stylesheet" type="text/css" href="darkstyle.css" id="theme">
         <header>
+            <script>
+                function toggleTheme() {
+                   var theme = document.getElementsByTagName('link')[1];
+                    if(theme.getAttribute('href') == 'style.css'){
+                        theme.setAttribute('href', 'darkstyle.css');
+                    } else {
+                        theme.setAttribute('href', 'style.css');
+                    }
+                }
+            </script>
             <title>My Portfolio</title>
             <div>
                 <h1 id="name">Sage Farinas</h1>
@@ -25,8 +36,10 @@
                 </p>
             </div>
             <div id="projects">
-                <script src="./script.js"></script>
                 <h2>Projects</h2>
+                <div class="button">
+                <button type="button" onclick="toggleTheme()">Toggle Theme</button>
+                </div>
                 <ul>
                     <li><a href="https://sagefarinas20.github.io/cat-cafe-website/">Cat Cafe</a></li>
                     <li><a href="https://sagefarinas20.github.io/holy_rollers/">Mount Holly Holy Rollers</a></li>
